@@ -559,51 +559,217 @@ ul {
   object-fit: cover;
   display: block;
 }
-/* ✅ VERSION TABLETTE & MOBILE (≤ 1024px) */
+/* --- FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Roboto:wght@400&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p, span, li, label, input, textarea {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  color: #e9c979;
+}
+
+.navbar a {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: bold;
+  color: #e9c979;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- CONTACT --- */
+.contact-section {
+  padding: 120px 40px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #e9c979;
+}
+
+.contact-subtext {
+  font-size: 1rem;
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  flex: 0 0 55%;
+  min-width: 280px;
+}
+
+.contact-image {
+  flex: 0 0 40%;
+  min-width: 240px;
+  max-width: 500px;
+}
+
+.contact-image img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  background-color: #111;
+  border: 1px solid #444;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.contact-form button {
+  background-color: transparent;
+  border: 2px solid #e9c979;
+  color: #e9c979;
+  padding: 12px 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #e9c979;
+  color: #000;
+}
+
+/* --- SERVICES --- */
+.services-section {
+  padding: 120px 40px 80px;
+  background-color: #000;
+  color: #e9c979;
+  text-align: center;
+}
+
+.services-title {
+  font-size: 2.4rem;
+  margin-bottom: 60px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-box {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(233, 201, 121, 0.2);
+  border-radius: 8px;
+  padding: 30px 20px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(3px);
+}
+
+.service-box:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateY(-6px);
+  box-shadow: 0 4px 16px rgba(233, 201, 121, 0.15);
+}
+
+.service-box img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.service-box h2 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #e9c979;
+  text-transform: uppercase;
+}
+
+.service-box p {
+  font-size: 0.95rem;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+/* ✅ RESPONSIVE jusqu’à tablette (1024px) */
 @media (max-width: 1024px) {
   .navbar {
+    padding: 10px 15px;
     height: 50px;
-    padding: 0 20px;
-    justify-content: flex-start;
   }
 
-  .logo-overlap {
-    height: 60px; /* logo plus petit */
-  }
-
-  .nav-left {
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    background-color: #000;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 0;
-    z-index: 9999;
-  }
-
-  .nav-left.show {
-    display: flex;
-  }
-
-  .burger-menu {
-    display: block;
-    position: absolute;
-    left: 20px;
-    top: 10px;
-    font-size: 28px;
-    z-index: 10001;
-  }
-
-  .logo-wrapper {
-    left: 50%;
-    transform: translateX(-50%);
+  .navbar a {
+    font-size: 14px;
   }
 
   .lang-switch {
-    display: none; /* supprime les langues pour plus de place */
+    display: none;
+  }
+
+  .hero,
+  .about,
+  .blog-section,
+  .gallery-section {
+    padding: 30px 15px;
+  }
+
+  .hero {
+    height: auto;
+  }
+
+  .hero-text h1 {
+    font-size: 1.4em;
+    line-height: 1.4em;
   }
 }
