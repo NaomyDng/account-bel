@@ -649,3 +649,69 @@ ul {
   margin: 0 auto;
 }
 }
+/* ✅ GLOBAL MOBILE OPTIMIZATIONS (apply only on small screens) */
+@media (max-width: 768px) {
+  /* 1. Réduction hauteur navbar */
+  .navbar {
+    padding: 10px 15px;
+    height: 50px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+  }
+
+  /* 2. Suppression de la barre de langue */
+  .lang-switch {
+    display: none;
+  }
+
+  /* 3. Réduction du scroll : chaque section prend moins de hauteur */
+  .hero,
+  .about,
+  .services-section,
+  .blog-section,
+  .gallery-section,
+  .contact-section {
+    padding: 30px 15px;
+  }
+
+  .hero {
+    height: auto;
+  }
+
+  .hero-text h1 {
+    font-size: 1.4em;
+    line-height: 1.4em;
+  }
+
+  /* 4. SERVICES : deux cadres par ligne */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .service-box h2 {
+    font-size: 14px;
+  }
+
+  .service-box p {
+    font-size: 12px;
+  }
+
+  /* 5. CONTACT : cacher image */
+  .contact-image {
+    display: none;
+  }
+
+  .contact-form {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
