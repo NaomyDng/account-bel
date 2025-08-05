@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos Services - Account-Bel | Cabinet d’expertise comptable à Bruxelles</title>
+  <meta name="description" content="Découvrez les services d’Account-Bel : comptabilité, fiscalité, paie, création d’entreprise, accompagnement juridique et plus. Expertise à Bruxelles depuis 2004." />
+  <meta name="keywords" content="services comptables, expert Bruxelles, fiscalité, gestion paie, création entreprise, audit, Account-Bel">
+  <meta name="author" content="Account-Bel SRL">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://account-bel.be/services.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nos Services - Account-Bel" />
+  <meta property="og:description" content="Tous les services offerts par Account-Bel, cabinet expert-comptable à Bruxelles. Expertise humaine et rigoureuse." />
+  <meta property="og:image" content="https://account-bel.be/images/og-image.jpg" />
+  <meta property="og:url" content="https://account-bel.be/services.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nos Services - Account-Bel" />
+  <meta name="twitter:description" content="Cabinet comptable à Bruxelles : comptabilité, fiscalité, accompagnement personnalisé." />
+  <meta name="twitter:image" content="https://account-bel.be/images/og-image.jpg" />
+
+  <!-- Optimisation Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet"/>
+
+  <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar">
+<ul class="nav-left">
+<li><a href="about.html">À PROPOS</a></li>
+<li><a href="services.html">SERVICES</a></li>
+</ul>
+<div class="logo-wrapper">
+<a href="index.html">
+<img alt="Logo Account-Bel" class="logo-overlap" src="logo.webp" loading="lazy"/>
+</a>
+</div>
+<ul class="nav-right">
+<li><a href="blog.html">BLOG</a></li>
+<li><a href="#contact">CONTACT</a></li>
+<li class="lang-switch">
+<a href="/fr/index.html">FR</a> |
+      <a href="/en/index.html">EN</a> |
+      <a href="/nl/index.html">NL</a> |
+      <a href="/gr/index.html">GR</a>
+</li>
+</ul>
+</nav>
+<!-- SECTION À PROPOS -->
+<section class="about">
+<div class="about-text">
+<h2>À PROPOS D’ACCOUNT-BEL<span class="belgian-flag-img title-flag"></span></h2>
+<p><strong>Account-Bel</strong> est une fiduciaire reconnue par l’I.T.A.A, reprise sous le numéro 50.593.883 et fondée en 2004. Le cabinet a été créé par <strong>Michaël SPANOUDIS</strong>, expert-comptable exerçant depuis 1996, avec une ambition claire : offrir aux entrepreneurs et particuliers un accompagnement comptable exigeant, humain et sur mesure.</p>
+<p>Chez Account-Bel, nous ne faisons pas de promesses inutiles. Nous faisons le travail, sérieusement, rigoureusement, avec une approche centrée sur l’écoute et la clarté. Ici, chaque client est considéré comme un partenaire, et chaque dossier comme un engagement personnel.</p>
+<p>Que vous soyez indépendant, dirigeant, en reconversion ou particulier, vous méritez un cabinet qui comprend vos enjeux et vous guide sans jargon, sans détour.</p>
+<p>Autour de <strong>Michaël SPANOUDIS</strong>, une équipe d’experts aux profils complémentaires prend en charge votre comptabilité avec précision, confidentialité et efficacité.</p>
+<p><strong>Notre mission :</strong> vous faire avancer en toute confiance parce que quand les chiffres sont clairs, l’esprit l’est aussi.</p>
+</div>
+<div class="about-photo">
+<img alt="Michael, fondateur Account-Bel" src="Michael.webp" loading="lazy" width="400" height="auto"/>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-inner">
+<p>© 2025 ACCOUNT-BEL. TOUS DROITS RÉSERVÉS.</p>
+<div class="footer-langs">
+<a href="#">FR</a> | <a href="#">EN</a> | <a href="#">NL</a> | <a href="#">GR</a>
+</div>
+</div>
+</footer>
+<!-- COOKIES BANNER -->
+<div class="cookie-banner" id="cookieBanner" style="display: none;">
+<p>Ce site utilise uniquement des cookies techniques nécessaires à son bon fonctionnement.</p>
+<button onclick="acceptCookies()">OK</button>
+</div>
+<script>
+    function acceptCookies() {
+      document.getElementById('cookieBanner').style.display = 'none';
+      localStorage.setItem('cookiesAccepted', 'true');
+    }
+
+    window.addEventListener("load", function () {
+      const accepted = localStorage.getItem('cookiesAccepted');
+      if (!accepted) {
+        document.getElementById('cookieBanner').style.display = 'block';
+      }
+    });
+</script>
+</body>
+</html>

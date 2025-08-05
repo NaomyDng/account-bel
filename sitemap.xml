@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 🇫🇷 FR -->
+  <url><loc>https://account-bel.be/</loc></url>
+  <url><loc>https://account-bel.be/#services</loc></url>
+  <url><loc>https://account-bel.be/#blog</loc></url>
+  <url><loc>https://account-bel.be/#galerie</loc></url>
+  <url><loc>https://account-bel.be/#contact</loc></url>
+  <url><loc>https://account-bel.be/mentions.html</loc></url>
+
+  <!-- 🇬🇧 EN -->
+  <url><loc>https://account-bel.be/english/</loc></url>
+  <url><loc>https://account-bel.be/english/#services</loc></url>
+  <url><loc>https://account-bel.be/english/#blog</loc></url>
+  <url><loc>https://account-bel.be/english/#galerie</loc></url>
+  <url><loc>https://account-bel.be/english/#contact</loc></url>
+  <url><loc>https://account-bel.be/english/mentions.html</loc></url>
+
+  <!-- 🇳🇱 NL -->
+  <url><loc>https://account-bel.be/nederlands/</loc></url>
+  <url><loc>https://account-bel.be/nederlands/#services</loc></url>
+  <url><loc>https://account-bel.be/nederlands/#blog</loc></url>
+  <url><loc>https://account-bel.be/nederlands/#galerie</loc></url>
+  <url><loc>https://account-bel.be/nederlands/#contact</loc></url>
+  <url><loc>https://account-bel.be/nederlands/mentions.html</loc></url>
+
+  <!-- 🇬🇷 GR -->
+  <url><loc>https://account-bel.be/greek/</loc></url>
+  <url><loc>https://account-bel.be/greek/#services</loc></url>
+  <url><loc>https://account-bel.be/greek/#blog</loc></url>
+  <url><loc>https://account-bel.be/greek/#galerie</loc></url>
+  <url><loc>https://account-bel.be/greek/#contact</loc></url>
+  <url><loc>https://account-bel.be/greek/mentions.html</loc></url>
+
+</urlset>

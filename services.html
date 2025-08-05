@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nos Services | ACCOUNT-BEL</title>
+<link href="style.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&amp;display=swap" rel="stylesheet"/>
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar">
+<ul class="nav-left">
+<li><a href="about.html">À PROPOS</a></li>
+<li><a href="services.html">SERVICES</a></li>
+</ul>
+<div class="logo-wrapper">
+<a href="index.html">
+<img alt="Logo Account-Bel" class="logo-overlap" src="logo.webp" loading="lazy" width="160" height="60"/>
+</a>
+</div>
+<ul class="nav-right">
+<li><a href="blog.html">BLOG</a></li>
+<li><a href="#contact">CONTACT</a></li>
+<li class="lang-switch">
+<a href="/fr/index.html">FR</a> |
+      <a href="/en/index.html">EN</a> |
+      <a href="/nl/index.html">NL</a> |
+      <a href="/gr/index.html">GR</a>
+</li>
+</ul>
+</nav>
+<!-- SECTION SERVICES -->
+<main class="services-section">
+<h1 class="services-title">NOS SERVICES</h1>
+<div class="services-grid">
+<div class="service-box">
+<img alt="Comptabilité" src="icons/comptabilite.png" loading="lazy" width="128" height="128"/>
+<h2>Comptabilité Générale</h2>
+<p>Suivi rigoureux de vos écritures et comptes.</p>
+</div>
+<div class="service-box">
+<img alt="Fiscalité" src="icons/fiscalite.png"/>
+<h2>Déclarations Fiscales</h2>
+<p>TVA, IS, IR... vos obligations entre de bonnes mains.</p>
+</div>
+<div class="service-box">
+<img alt="Création" src="icons/creation.png"/>
+<h2>Création d’Entreprise</h2>
+<p>Accompagnement complet de A à Z.</p>
+</div>
+<div class="service-box">
+<img alt="Paie" src="icons/paie.png"/>
+<h2>Gestion de la Paie</h2>
+<p>Bulletins, charges sociales, DSN automatisées.</p>
+</div>
+<div class="service-box">
+<img alt="Conseil" src="icons/conseil.png"/>
+<h2>Conseil en Gestion</h2>
+<p>Lecture claire de votre activité, décisions stratégiques.</p>
+</div>
+<div class="service-box">
+<img alt="Bilan" src="icons/bilan.png"/>
+<h2>Préparation du Bilan</h2>
+<p>Documents de clôture certifiés et détaillés.</p>
+</div>
+<div class="service-box">
+<img alt="Juridique" src="icons/juridique.png"/>
+<h2>Accompagnement Juridique</h2>
+<p>Statuts, AG, mentions légales… sans stress.</p>
+</div>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-inner">
+<p>© 2025 ACCOUNT-BEL. TOUS DROITS RÉSERVÉS.</p>
+<div class="footer-langs">
+<a href="#">FR</a> | <a href="#">EN</a> | <a href="#">NL</a> | <a href="#">GR</a>
+</div>
+</div>
+</footer>
+<!-- COOKIES BANNER -->
+<div class="cookie-banner" id="cookieBanner" style="display: none;">
+<p>Ce site utilise uniquement des cookies techniques nécessaires à son bon fonctionnement.</p>
+<button onclick="acceptCookies()">OK</button>
+</div>
+<script>
+    function acceptCookies() {
+      document.getElementById('cookieBanner').style.display = 'none';
+      localStorage.setItem('cookiesAccepted', 'true');
+    }
+
+    window.addEventListener("load", function () {
+      const accepted = localStorage.getItem('cookiesAccepted');
+      if (!accepted) {
+        document.getElementById('cookieBanner').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
