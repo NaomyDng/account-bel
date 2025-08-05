@@ -559,69 +559,51 @@ ul {
   object-fit: cover;
   display: block;
 }
-/* ✅ GLOBAL MOBILE OPTIMIZATIONS (apply only on small screens) */
+/* ✅ VERSION TABLETTE & MOBILE (≤ 1024px) */
 @media (max-width: 1024px) {
-  /* 1. Réduction hauteur navbar */
   .navbar {
-    padding: 10px 15px;
     height: 50px;
+    padding: 0 20px;
+    justify-content: flex-start;
   }
 
-  .navbar a {
-    font-size: 14px;
+  .logo-overlap {
+    height: 60px; /* logo plus petit */
   }
 
-  /* 2. Suppression de la barre de langue */
-  .lang-switch {
+  .nav-left {
     display: none;
-  }
-
-  /* 3. Réduction du scroll : chaque section prend moins de hauteur */
-  .hero,
-  .about,
-  .services-section,
-  .blog-section,
-  .gallery-section,
-  .contact-section {
-    padding: 30px 15px;
-  }
-
-  .hero {
-    height: auto;
-  }
-
-  .hero-text h1 {
-    font-size: 1.4em;
-    line-height: 1.4em;
-  }
-
-  /* 4. SERVICES : deux cadres par ligne */
-  .services-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-  }
-
-  .service-box h2 {
-    font-size: 14px;
-  }
-
-  .service-box p {
-    font-size: 12px;
-  }
-
-  /* 5. CONTACT : cacher image */
-  .contact-image {
-    display: none;
-  }
-
-  .contact-form {
-    flex: 1 1 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
     width: 100%;
+    background-color: #000;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    z-index: 9999;
   }
 
-  .contact-container {
-    flex-direction: column;
-    gap: 20px;
+  .nav-left.show {
+    display: flex;
+  }
+
+  .burger-menu {
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    font-size: 28px;
+    z-index: 10001;
+  }
+
+  .logo-wrapper {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .lang-switch {
+    display: none; /* supprime les langues pour plus de place */
   }
 }
