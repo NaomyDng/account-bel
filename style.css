@@ -560,7 +560,7 @@ ul {
   display: block;
 }
 /* ✅ GLOBAL MOBILE OPTIMIZATIONS (apply only on small screens) */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   /* 1. Réduction hauteur navbar */
   .navbar {
     padding: 10px 15px;
