@@ -744,6 +744,11 @@ ul {
 
 /* ✅ GLOBAL MOBILE OPTIMIZATIONS (apply only on small screens) */
 @media (max-width: 1024px) {
+  .hero-text h1 {
+  font-size: 1.4em;
+  line-height: 1.4em;
+  margin-bottom: 30px; /* 👈 ajoute ou augmente cette valeur */
+}
   /* Réduction hauteur et padding de la navbar */
   .navbar {
     height: 50px;
