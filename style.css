@@ -744,21 +744,58 @@ ul {
 
 /* ✅ GLOBAL MOBILE OPTIMIZATIONS (apply only on small screens) */
 @media (max-width: 1024px) {
-  /* 1. Réduction hauteur navbar */
+  /* Réduction hauteur et padding de la navbar */
   .navbar {
-    padding: 10px 15px;
     height: 50px;
+    padding: 0 20px;
+    justify-content: space-between;
   }
 
-  .navbar a {
-    font-size: 14px;
+  /* Icône burger visible */
+  .burger-menu {
+    display: block;
+    font-size: 28px;
+    color: #e9c979;
+    cursor: pointer;
+    z-index: 1001;
   }
 
-  /* 2. Suppression de la barre de langue */
+  /* Cacher les liens de navigation au départ */
+  .nav-left {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    z-index: 999;
+  }
+
+  /* Afficher les liens quand le menu est ouvert */
+  .nav-left.show {
+    display: flex;
+  }
+
+  /* Logo centré et plus petit */
+  .logo-wrapper {
+    position: static;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .logo-overlap {
+    height: 60px;
+  }
+
+  /* Masquer le switch des langues */
   .lang-switch {
     display: none;
   }
-
+}
   /* 3. Réduction du scroll : chaque section prend moins de hauteur */
   .hero,
   .about,
