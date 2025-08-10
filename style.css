@@ -113,13 +113,13 @@ ul {
   z-index: 10001;
 }
 
-/* --- HERO --- */
+/* --- HERO (fix accueil desktop) --- */
 .hero {
   position: relative;
-  height: 100vh;
+  min-height: calc(100vh - 70px);
   overflow: hidden;
-  margin-top: -70px;
-  padding-top: 70px;
+  margin-top: 0;      /* ← retire le -70px */
+  padding-top: 70px;  /* espace sous la nav fixe */
 }
 
 .hero-image {
@@ -742,27 +742,46 @@ ul {
   line-height: 1.5;
 }
 
-/* ✅ GLOBAL MOBILE OPTIMIZATIONS (apply only on small screens) */
-/* ✅ GLOBAL MOBILE OPTIMIZATIONS (apply only on small screens) */
+/* ✅ MOBILE (≤1024px) — version propre et complète */
 @media (max-width: 1024px) {
   /* Navbar compacte */
   .navbar {
     height: 50px;
     padding: 0 20px;
     justify-content: space-between;
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
 
-  /* Icône burger visible */
-  .burger-menu {
-    display: block;
-    font-size: 28px;
-    color: #e9c979;
-    cursor: pointer;
+  /* Langues visibles à gauche */
+  .lang-switch{
+    display: inline-flex !important;
+    gap: 10px;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 1001;
   }
 
-  /* Liens cachés par défaut en mobile */
-  .nav-left {
+  /* Burger à droite */
+  .burger-menu{
+    display: block !important;
+    font-size: 28px;
+    color: #e9c979;
+    cursor: pointer;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+  }
+
+  /* Cacher les liens inline (on passe par le menu déroulant en JS) */
+  .nav-left{
     display: none;
     position: absolute;
     top: 50px;
@@ -775,63 +794,52 @@ ul {
     padding: 20px 0;
     z-index: 999;
   }
+  .nav-left.show{ display: flex; }
 
-  /* Afficher quand le menu est ouvert */
-  .nav-left.show {
-    display: flex;
+  /* Logo centré */
+  .logo-wrapper{
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
   }
+  .logo-overlap{ height: 60px; }
 
-  /* Logo centré et plus petit */
-  .logo-wrapper {
-    position: static;
-    transform: none;
-    margin: 0 auto;
-  }
-  .logo-overlap { height: 60px; }
+  /* ↓↓↓ Tes réglages de sections (replacés DANS la media) ↓↓↓ */
 
-  /* Masquer le switch des langues */
-  .lang-switch { display: none; }
-
-  /* 3) Réduction des paddings des sections en mobile */
+  /* Réduction du scroll */
   .hero,
   .about,
   .services-section,
   .blog-section,
   .gallery-section,
-  .contact-section {
+  .contact-section{
     padding: 30px 15px;
   }
 
-  .hero { height: auto; }
+  /* Hero : évite l’écrasement sous la nav en mobile */
+  .hero{
+    height: auto;
+    min-height: calc(100vh - 50px);
+    margin-top: 0;
+    padding-top: 50px;
+  }
 
-  .hero-text h1 {
+  .hero-text h1{
     font-size: 1.4em;
     line-height: 1.4em;
   }
 
-  /* 4) Services : deux cadres par ligne */
-  .services-grid {
+  /* Services : 2 colonnes */
+  .services-grid{
     grid-template-columns: 1fr 1fr;
     gap: 15px;
   }
-  .service-box h2 { font-size: 14px; }
-  .service-box p  { font-size: 12px; }
+  .service-box h2{ font-size: 14px; }
+  .service-box p { font-size: 12px; }
 
-  /* 5) Contact : cacher l'image, tout en colonne */
-  .contact-image { display: none; }
-  .contact-form  { flex: 1 1 100%; width: 100%; }
-  .contact-container { flex-direction: column; gap: 20px; }
-}
-
-/* ✅ FORCER le mode desktop pour éviter que le menu recouvre tout */
-@media (min-width: 1025px) {
-  .burger-menu { display: none !important; }
-  .nav-left {
-    display: flex !important;
-    position: absolute;
-    left: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-    gap: 30px;
-  }
+  /* Contact */
+  .contact-image{ display: none; }
+  .contact-form { flex: 1 1 100%; width: 100%; }
+  .contact-container{ flex-direction: column; gap: 20px; }
 }
