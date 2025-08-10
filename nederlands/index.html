@@ -43,6 +43,7 @@
 <div class="lang-switch" aria-label="Taalkeuze">
 <a href="../index.html">FR</a> | <a href="../english/index.html">EN</a> | <a href="index.html">NL</a> | <a href="../greek/index.html">GR</a>
 </div>
+  <div class="burger-menu" id="burger">☰</div>
 </nav>
 
 <main class="scroll-container">
@@ -158,5 +159,19 @@
     </div>
   </div>
 </footer>
+  <script>
+  const burger = document.getElementById('burger');
+  const navLeft = document.querySelector('.nav-left');
+
+  if (burger && navLeft) {
+    burger.addEventListener('click', () => {
+      navLeft.classList.toggle('show');
+    });
+    // Optionnel: fermer le menu après un clic sur un lien
+    document.querySelectorAll('.nav-left a').forEach(a => {
+      a.addEventListener('click', () => navLeft.classList.remove('show'));
+    });
+  }
+</script>
 </body>
 </html>
