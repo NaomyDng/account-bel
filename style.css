@@ -743,13 +743,9 @@ ul {
 }
 
 /* ✅ GLOBAL MOBILE OPTIMIZATIONS (apply only on small screens) */
+/* ✅ GLOBAL MOBILE OPTIMIZATIONS (apply only on small screens) */
 @media (max-width: 1024px) {
-  .hero-text h1 {
-  font-size: 1.4em;
-  line-height: 1.4em;
-  margin-bottom: 100px; /* 👈 ajoute ou augmente cette valeur */
-}
-  /* Réduction hauteur et padding de la navbar */
+  /* Navbar compacte */
   .navbar {
     height: 50px;
     padding: 0 20px;
@@ -765,7 +761,7 @@ ul {
     z-index: 1001;
   }
 
-  /* Cacher les liens de navigation au départ */
+  /* Liens cachés par défaut en mobile */
   .nav-left {
     display: none;
     position: absolute;
@@ -780,7 +776,7 @@ ul {
     z-index: 999;
   }
 
-  /* Afficher les liens quand le menu est ouvert */
+  /* Afficher quand le menu est ouvert */
   .nav-left.show {
     display: flex;
   }
@@ -791,17 +787,12 @@ ul {
     transform: none;
     margin: 0 auto;
   }
-
-  .logo-overlap {
-    height: 60px;
-  }
+  .logo-overlap { height: 60px; }
 
   /* Masquer le switch des langues */
-  .lang-switch {
-    display: none;
-  }
-}
-  /* 3. Réduction du scroll : chaque section prend moins de hauteur */
+  .lang-switch { display: none; }
+
+  /* 3) Réduction des paddings des sections en mobile */
   .hero,
   .about,
   .services-section,
@@ -811,76 +802,36 @@ ul {
     padding: 30px 15px;
   }
 
-  .hero {
-    height: auto;
-  }
+  .hero { height: auto; }
 
   .hero-text h1 {
-  font-size: 2.6rem;
-  text-transform: uppercase;
-  color: #fff;
-  margin-bottom: 80px; /* Plus d’espace */
-}
-@media (max-width: 1024px) {
-  /* Hero section visible même avec la navbar */
-  .hero {
-    height: 100vh;
-    margin-top: 0;
-    padding-top: 50px;
-    position: relative;
+    font-size: 1.4em;
+    line-height: 1.4em;
   }
 
-  .hero-image {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-
-  .hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-  }
-
-  .hero-text h1 {
-    font-size: 1.8rem;
-    line-height: 1.4;
-    margin: 0 auto;
-  }
-
-  .cta-button {
-    margin-top: 20px;
-  }
-}
-  /* 4. SERVICES : deux cadres par ligne */
+  /* 4) Services : deux cadres par ligne */
   .services-grid {
     grid-template-columns: 1fr 1fr;
     gap: 15px;
   }
+  .service-box h2 { font-size: 14px; }
+  .service-box p  { font-size: 12px; }
 
-  .service-box h2 {
-    font-size: 14px;
-  }
+  /* 5) Contact : cacher l'image, tout en colonne */
+  .contact-image { display: none; }
+  .contact-form  { flex: 1 1 100%; width: 100%; }
+  .contact-container { flex-direction: column; gap: 20px; }
+}
 
-  .service-box p {
-    font-size: 12px;
-  }
-
-  /* 5. CONTACT : cacher image */
-  .contact-image {
-    display: none;
-  }
-
-  .contact-form {
-    flex: 1 1 100%;
-    width: 100%;
-  }
-
-  .contact-container {
-    flex-direction: column;
-    gap: 20px;
+/* ✅ FORCER le mode desktop pour éviter que le menu recouvre tout */
+@media (min-width: 1025px) {
+  .burger-menu { display: none !important; }
+  .nav-left {
+    display: flex !important;
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    gap: 30px;
   }
 }
