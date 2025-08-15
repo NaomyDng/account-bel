@@ -113,13 +113,13 @@ ul {
   z-index: 10001;
 }
 
-/* --- HERO (fix accueil desktop) --- */
+/* --- HERO --- */
 .hero {
   position: relative;
-  min-height: calc(100vh - 70px);
+  height: 100vh; /* ✅ Fix pour forcer l'affichage sur desktop */
   overflow: hidden;
-  margin-top: 0;      /* ← retire le -70px */
-  padding-top: 70px;  /* espace sous la nav fixe */
+  margin-top: -70px;
+  padding-top: 70px;
 }
 
 .hero-image {
@@ -397,7 +397,7 @@ ul {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  flex-wrap: nowrap; /* Empêche le passage en colonne */
+  flex-wrap: nowrap;
   gap: 40px;
   max-width: 1100px;
   margin: 0 auto;
@@ -422,6 +422,7 @@ ul {
   display: block;
   margin: 0 auto;
 }
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -432,6 +433,7 @@ ul {
   color: #fff;
   font-size: 0.95rem;
 }
+
 .contact-form button {
   background-color: transparent;
   border: 2px solid #e9c979;
@@ -447,7 +449,6 @@ ul {
   background-color: #e9c979;
   color: #000;
 }
-
 
 /* --- FOOTER --- */
 .footer {
@@ -559,287 +560,27 @@ ul {
   object-fit: cover;
   display: block;
 }
-/* --- FONTS --- */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Roboto:wght@400&display=swap');
 
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-p, span, li, label, input, textarea {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-}
-
-h1, h2, h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
-  color: #e9c979;
-}
-
-.navbar a {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: bold;
-  color: #e9c979;
-  font-size: 16px;
-  text-transform: uppercase;
-  transition: 0.3s;
-}
-
-.navbar a:hover {
-  color: #fff;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
-}
-
-/* --- CONTACT --- */
-.contact-section {
-  padding: 120px 40px;
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-}
-
-.contact-title {
-  font-size: 2.4rem;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  color: #e9c979;
-}
-
-.contact-subtext {
-  font-size: 1rem;
-  color: #ccc;
-  max-width: 700px;
-  margin: 0 auto 60px;
-  line-height: 1.6;
-}
-
-.contact-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: nowrap;
-  gap: 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.contact-form {
-  flex: 0 0 55%;
-  min-width: 280px;
-}
-
-.contact-image {
-  flex: 0 0 40%;
-  min-width: 240px;
-  max-width: 500px;
-}
-
-.contact-image img {
-  width: 100%;
-  max-width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 20px;
-  background-color: #111;
-  border: 1px solid #444;
-  color: #fff;
-  font-size: 0.95rem;
-}
-
-.contact-form button {
-  background-color: transparent;
-  border: 2px solid #e9c979;
-  color: #e9c979;
-  padding: 12px 30px;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.contact-form button:hover {
-  background-color: #e9c979;
-  color: #000;
-}
-
-/* --- SERVICES --- */
-.services-section {
-  padding: 120px 40px 80px;
-  background-color: #000;
-  color: #e9c979;
-  text-align: center;
-}
-
-.services-title {
-  font-size: 2.4rem;
-  margin-bottom: 60px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.service-box {
-  background-color: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(233, 201, 121, 0.2);
-  border-radius: 8px;
-  padding: 30px 20px;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(3px);
-}
-
-.service-box:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  transform: translateY(-6px);
-  box-shadow: 0 4px 16px rgba(233, 201, 121, 0.15);
-}
-
-.service-box img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  margin-bottom: 20px;
-  filter: brightness(0) invert(1);
-}
-
-.service-box h2 {
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-  color: #e9c979;
-  text-transform: uppercase;
-}
-
-.service-box p {
-  font-size: 0.95rem;
-  color: #ddd;
-  line-height: 1.5;
-}
-
-/* ✅ MOBILE (≤1024px) — version propre et complète */
+/* ✅ Fix mobile */
 @media (max-width: 1024px) {
-  /* Navbar compacte */
   .navbar {
     height: 50px;
     padding: 0 20px;
     justify-content: space-between;
-    position: fixed; top: 0; left: 0; right: 0;
-    z-index: 1000;
-    background-color: rgba(0,0,0,0.4);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
   }
-
-  /* Langues visibles à gauche */
-  .lang-switch{
-    display: inline-flex !important;
-    gap: 10px;
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1001;
-  }
-
-  /* Burger à droite */
-  .burger-menu{
-    display: block !important;
-    font-size: 28px;
-    color: #e9c979;
-    cursor: pointer;
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1001;
-  }
-
-  /* Cacher les liens inline (on passe par le menu déroulant en JS) */
-  .nav-left{
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    background-color: #000;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 0;
-    z-index: 999;
-  }
-  .nav-left.show{ display: flex; }
-
-  /* Logo centré */
-  .logo-wrapper{
-    position: absolute !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    margin: 0 !important;
-  }
-  .logo-overlap{ height: 60px; }
-
-  /* ↓↓↓ Tes réglages de sections (replacés DANS la media) ↓↓↓ */
-
-  /* Réduction du scroll */
-  .hero,
-  .about,
-  .services-section,
-  .blog-section,
-  .gallery-section,
-  .contact-section{
-    padding: 30px 15px;
-  }
-
-  /* Hero : évite l’écrasement sous la nav en mobile */
-  .hero{
-    height: auto;
-    min-height: calc(100vh - 50px);
-    margin-top: 0;
-    padding-top: 50px;
-  }
-
-  .hero-text h1{
-    font-size: 1.4em;
-    line-height: 1.4em;
-  }
-
-  /* Services : 2 colonnes */
-  .services-grid{
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-  }
-  .service-box h2{ font-size: 14px; }
+  .burger-menu { display: block; font-size: 28px; color: #e9c979; cursor: pointer; z-index: 1001; }
+  .nav-left { display: none; position: absolute; top: 50px; left: 0; width: 100%; background-color: #000; flex-direction: column; align-items: center; gap: 20px; padding: 20px 0; z-index: 999; }
+  .nav-left.show { display: flex; }
+  .logo-wrapper { position: static; transform: none; margin: 0 auto; }
+  .logo-overlap { height: 60px; }
+  .lang-switch { display: none; }
+  .hero, .about, .services-section, .blog-section, .gallery-section, .contact-section { padding: 30px 15px; }
+  .hero { height: auto; }
+  .hero-text h1 { font-size: 1.4em; line-height: 1.4em; }
+  .services-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
+  .service-box h2 { font-size: 14px; }
   .service-box p { font-size: 12px; }
-
-  /* Contact */
-  .contact-image{ display: none; }
+  .contact-image { display: none; }
   .contact-form { flex: 1 1 100%; width: 100%; }
-  .contact-container{ flex-direction: column; gap: 20px; }
+  .contact-container { flex-direction: column; gap: 20px; }
 }
