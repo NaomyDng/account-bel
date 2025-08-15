@@ -574,8 +574,16 @@ ul {
   .logo-wrapper { position: static; transform: none; margin: 0 auto; }
   .logo-overlap { height: 60px; }
   .lang-switch { display: none; }
+
   .hero, .about, .services-section, .blog-section, .gallery-section, .contact-section { padding: 30px 15px; }
-  .hero { height: auto; }
+
+  /* 🔧 Fix visibilité du hero en mobile */
+  .hero {
+    margin-top: -50px;    /* au lieu de -70px desktop */
+    padding-top: 50px;    /* compense la navbar mobile */
+    min-height: 70vh;     /* évite l’écrasement du hero */
+  }
+
   .hero-text h1 { font-size: 1.4em; line-height: 1.4em; }
   .services-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
   .service-box h2 { font-size: 14px; }
@@ -583,4 +591,8 @@ ul {
   .contact-image { display: none; }
   .contact-form { flex: 1 1 100%; width: 100%; }
   .contact-container { flex-direction: column; gap: 20px; }
+
+  /* 🌐 Langues insérées dans le menu gauche (mobile) */
+  .lang-inline { display: block; font-size: 14px; }
+  .lang-inline a { color: #e9c979; text-transform: uppercase; }
 }
