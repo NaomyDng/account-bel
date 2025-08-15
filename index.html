@@ -169,5 +169,21 @@
     navLeft.classList.toggle('show');
   });
 </script>
+  <script>
+// Force le rechargement sans cache à chaque clic sur un lien interne
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
+            if (href && !href.startsWith("http") && !href.startsWith("#")) {
+                e.preventDefault();
+                // Ajoute un paramètre unique pour éviter le cache
+                const noCacheURL = href + (href.includes("?") ? "&" : "?") + "v=" + Date.now();
+                window.location.href = noCacheURL;
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>
