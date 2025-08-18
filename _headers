@@ -1,0 +1,23 @@
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/sw.js
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/icons/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.(woff|woff2|ttf|otf)
+  Cache-Control: public, max-age=31536000, immutable
