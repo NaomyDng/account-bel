@@ -596,58 +596,33 @@ ul {
   .lang-inline { display: block; font-size: 14px; }
   .lang-inline a { color: #e9c979; text-transform: uppercase; }
 }
-/* --- Bouton carré Contactez-nous --- */
+/* --- Bouton rectangulaire Contactez-nous --- */
 .cta-center {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4rem 0; /* espace autour du carré dans le hero */
+  margin: 4rem 0;
 }
 
-.square-cta {
-  --size: min(80vw, 260px);  /* largeur responsive, max 260px */
-  inline-size: var(--size);
-  aspect-ratio: 1 / 1;       /* carré verrouillé */
-  display: grid;
-  place-items: center;
-  border: 1px solid #e9c979; /* doré cohérent avec ta charte */
-  border-radius: 12px;
+.rect-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 40px;          /* espace interne */
+  border: 2px solid #e9c979;   /* doré Account-Bel */
+  border-radius: 8px;          /* coins arrondis */
   background: transparent;
   color: #e9c979;
   font-weight: 600;
+  text-transform: uppercase;
+  font-size: 16px;
   text-decoration: none;
-  transition: transform 0.2s ease, background 0.2s ease;
-  flex: 0 0 auto;
-  min-width: 0;
-  min-height: 0;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
-.square-cta:hover,
-.square-cta:focus-visible {
+.rect-cta:hover,
+.rect-cta:focus-visible {
   transform: translateY(-2px);
-  background: rgba(233, 201, 121, 0.10);
-}
-
-.square-cta > span {
-  padding: 1rem;
-  text-align: center;
-  font-size: clamp(14px, 3.6vw, 20px);
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-
-@supports not (aspect-ratio: 1/1) {
-  .square-cta { position: relative; }
-  .square-cta::before {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
-  }
-  .square-cta > span {
-    position: absolute;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    padding: 1rem;
-  }
+  background: #e9c979;
+  color: #000;
 }
