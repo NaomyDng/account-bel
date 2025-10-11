@@ -1,7 +1,33 @@
 {
+  "version": 2,
+  "trailingSlash": true,
+
   "redirects": [
-    { "source": "/", "destination": "/fr/", "permanent": false }
+    { "source": "/index.html", "destination": "/", "permanent": true },
+
+    { "source": "/english/index.html", "destination": "/english/", "permanent": true },
+    { "source": "/nederlands/index.html", "destination": "/nederlands/", "permanent": true },
+    { "source": "/greek/index.html", "destination": "/greek/", "permanent": true },
+
+    { "source": "/english", "destination": "/english/", "permanent": true },
+    { "source": "/nederlands", "destination": "/nederlands/", "permanent": true },
+    { "source": "/greek", "destination": "/greek/", "permanent": true },
+
+    { "source": "/mentions", "destination": "/mentions.html", "permanent": true },
+    { "source": "/english/mentions", "destination": "/english/mentions.html", "permanent": true },
+    { "source": "/nederlands/mentions", "destination": "/nederlands/mentions.html", "permanent": true },
+    { "source": "/greek/mentions", "destination": "/greek/mentions.html", "permanent": true },
+
+    { "source": "/en", "destination": "/english/", "permanent": true },
+    { "source": "/en/:path*", "destination": "/english/", "permanent": true },
+    { "source": "/nl", "destination": "/nederlands/", "permanent": true },
+    { "source": "/nl/:path*", "destination": "/nederlands/", "permanent": true },
+    { "source": "/gr", "destination": "/greek/", "permanent": true },
+    { "source": "/gr/:path*", "destination": "/greek/", "permanent": true },
+    { "source": "/el", "destination": "/greek/", "permanent": true },
+    { "source": "/el/:path*", "destination": "/greek/", "permanent": true }
   ],
+
   "headers": [
     {
       "source": "/(.*)",
