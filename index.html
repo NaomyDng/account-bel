@@ -3,44 +3,62 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
- <head>
   <meta charset="utf-8"/>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17377754743">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'AW-17377754743');
-</script>
-<title>Boekhoudkundige expertise in Brussel | Account-Bel</title>
-<meta name="description" content="Account-Bel, erkend boekhoudkantoor in Brussel. Boekhouding, fiscaliteit, oprichting van ondernemingen en advies op maat." />
-<meta name="keywords" content="boekhouding, fiscaliteit, Brussel, Account-Bel, boekhoudkantoor, btw, jaarrekening" />
-<meta name="author" content="Account-Bel SRL" />
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://account-bel.be/nederlands/index.html" />
+  <!-- Google tag (gtag.js) - (Ads/Conversion ID conservé) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17377754743"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17377754743');
+  </script>
 
-<!-- Open Graph -->
-<meta property="og:title" content="Boekhoudkundige expertise in Brussel | Account-Bel" />
-<meta property="og:description" content="Boekhouding, fiscale aangiften en oprichting van ondernemingen in Brussel. Deskundige en vertrouwelijke begeleiding." />
-<meta property="og:image" content="https://account-bel.be/images/og-image.jpg" />
-<meta property="og:url" content="https://account-bel.be/nederlands/index.html" />
-<meta property="og:type" content="website" />
+  <title>Boekhoudkundige expertise in Brussel | Account-Bel</title>
+  <meta name="description" content="Account-Bel, erkend boekhoudkantoor in Brussel. Boekhouding, fiscaliteit, oprichting van ondernemingen en advies op maat." />
+  <meta name="keywords" content="boekhouding, fiscaliteit, Brussel, Account-Bel, boekhoudkantoor, btw, jaarrekening" />
+  <meta name="author" content="Account-Bel SRL" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://account-bel.be/nederlands/index.html" />
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Boekhoudkundige expertise in Brussel | Account-Bel" />
-<meta name="twitter:description" content="Uw cijfers, onze zorg. Persoonlijke boekhoudkundige begeleiding in Brussel." />
-<meta name="twitter:image" content="https://account-bel.be/images/og-image.jpg" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Boekhoudkundige expertise in Brussel | Account-Bel" />
+  <meta property="og:description" content="Boekhouding, fiscale aangiften en oprichting van ondernemingen in Brussel. Deskundige en vertrouwelijke begeleiding." />
+  <meta property="og:image" content="https://account-bel.be/images/og-image.jpg" />
+  <meta property="og:url" content="https://account-bel.be/nederlands/index.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Boekhoudkundige expertise in Brussel | Account-Bel" />
+  <meta name="twitter:description" content="Uw cijfers, onze zorg. Persoonlijke boekhoudkundige begeleiding in Brussel." />
+  <meta name="twitter:image" content="https://account-bel.be/images/og-image.jpg" />
+
   <link rel="stylesheet" href="../style.css?v=4"/>
-<link rel="preload" href="../home.webp" as="image" type="image/webp" fetchpriority="high">
+  <!-- Priorité de la hero actuelle (webp existant) -->
+  <link rel="preload" href="../home.webp" as="image" type="image/webp" fetchpriority="high">
+
+  <!-- Fonts plus rapides -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet"/>
+
+  <!-- Patch léger anti-CLS & contraste footer (non intrusif) -->
+  <style>
+    img{height:auto;display:block}
+    .hero-image{width:100%;object-fit:cover}
+    .about-photo-wrapper img{width:100%;aspect-ratio:4/5}
+    .service-box img{width:100%;aspect-ratio:4/3}
+    .contact-image img{width:100%;aspect-ratio:4/3}
+    .gallery-item img{width:100%;aspect-ratio:1/1}
+    .logo-overlap{aspect-ratio:1/1}
+    footer.footer, .footer{color:#EDEDED}
+    .footer a{color:#FFFFFF;text-decoration:underline}
+  </style>
 </head>
 <body>
 <!-- NAVBAR -->
@@ -54,111 +72,112 @@
   </ul>
 
   <div class="logo-wrapper">
-    <a href="#accueil"><img src="../logo.webp" alt="Logo" class="logo-overlap" /></a>
+    <!-- Logo non lazy pour éviter flicker navbar -->
+    <a href="#accueil"><img src="../logo.webp" alt="Logo" class="logo-overlap" decoding="async" /></a>
   </div>
-<div class="lang-switch" aria-label="Taalkeuze">
-<a href="../index.html">FR</a> | <a href="../english/index.html">EN</a> | <a href="index.html">NL</a> | <a href="../greek/index.html">GR</a>
-</div>
-<div class="burger-menu" id="burger">☰</div>
+  <div class="lang-switch" aria-label="Taalkeuze">
+    <a href="../index.html">FR</a> | <a href="../english/index.html">EN</a> | <a href="index.html">NL</a> | <a href="../greek/index.html">GR</a>
+  </div>
+  <div class="burger-menu" id="burger">☰</div>
 </nav>
 
 <main class="scroll-container">
-<!-- HERO -->
-<section class="hero" id="accueil">
-  <img src="../home.webp" alt="Home" class="hero-image"/>
-  <div class="hero-overlay"></div>
-  <div class="hero-text">
-    <h1>BOEKHOUDKUNDIGE EXPERTISE, HERUITGEVONDEN MET EISEN</h1>
-    <div class="cta-center">
-      <a href="#contact" class="rect-cta">Neem contact met ons op</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- OVER ONS -->
-<section class="about" id="about">
-  <div class="about-text">
-    <h2>OVER ACCOUNT-BEL<span class="belgian-flag-img title-flag"></span></h2>
-    <p><strong>Account-Bel<span class="belgian-flag-img"></span></strong> is een erkend boekhoudkantoor door het I.T.A.A., geregistreerd onder nummer 50.593.883 en opgericht in 2004 door <strong>Michaël SPANOUDIS</strong>.</p>
-    <p>Bij Account-Bel maken we geen loze beloften. Wij doen het werk serieus en nauwkeurig, met een aanpak gericht op luisteren en helderheid. Elke klant is een partner, elk dossier een verbintenis.</p>
-    <p>Ons team van experts met complementaire profielen beheert uw boekhouding met precisie, vertrouwelijkheid en efficiëntie.</p>
-    <p><strong>Onze missie:</strong> u helpen vooruitgaan met een gerust hart — heldere cijfers zorgen voor een heldere geest.</p>
-  </div>
-  <div class="about-photo-wrapper">
-    <img src="../admin.webp" alt="Michael Beheerder" loading="lazy" />
-    <div class="about-photo-overlay">Michael Beheerder</div>
-  </div>
-</section>
-
-<!-- DIENSTEN -->
-<section class="services-section" id="services">
-  <h2 class="services-title">ONZE DIENSTEN</h2>
-  <div class="services-grid">
-    <div class="service-box"><img src="../comptabilite.webp" alt="" loading="lazy" /><h2>Algemene Boekhouding</h2><p>Volledige boekhouding, situatieanalyses en updates.</p></div>
-    <div class="service-box"><img src="../fiscalite.webp" alt="" loading="lazy" /><h2>Fiscale Aangiften</h2><p>Vennootschaps- en personenbelasting, btw-aangiften.</p></div>
-    <div class="service-box"><img src="../creation.webp" alt="" loading="lazy" /><h2>Oprichting van Ondernemingen</h2><p>Begeleiding van financieel plan tot notariële akte.</p></div>
-    <div class="service-box"><img src="../social.webp" alt="" loading="lazy" /><h2>Sociale Administratie</h2><p>Bevoorrechte toegang tot sociale partners.</p></div>
-    <div class="service-box"><img src="../conseil.webp" alt="" loading="lazy" /><h2>Beheeradvies</h2><p>Strategische begeleiding en dashboards.</p></div>
-    <div class="service-box"><img src="../bilan.webp" alt="" loading="lazy" /><h2>Voorbereiding van de Jaarrekening</h2><p>Tussentijdse of jaarlijkse balansen, interne audits.</p></div>
-    <div class="service-box"><img src="../juridique.webp" alt="" loading="lazy" /><h2>Juridische Bijstand</h2><p>Statuten, algemene vergaderingen en advies.</p></div>
-    <div class="service-box"><img src="../audit.webp" alt="" loading="lazy" /><h2>Premium Audit</h2><p>Grondige controle met gedetailleerd verslag.</p></div>
-  </div>
-</section>
-
-<!-- BLOG -->
-<section class="blog-section" id="blog">
-  <h2 class="blog-title">ONZE BLOG</h2>
-  <div class="blog-container">
-    <div class="blog-post">
-      <img src="../facturation.webp" alt="Elektronische facturatie" loading="lazy" />
-      <div class="blog-content">
-        <h2>Elektronische facturatie in België</h2>
-        <p class="blog-date">26 juni 2025</p>
-        <p> Vanaf 1 januari 2026 wordt elektronische facturatie verplicht in België. Bereid u tijdig voor en optimaliseer uw administratie.</p>
-        <p>Wij begeleiden u graag in dit proces.</p>
-        <p><a class="read-more" href="#contact">Contacteer ons voor hulp of vragen</a>.</p>
+  <!-- HERO -->
+  <section class="hero" id="accueil">
+    <!-- Hero prioritaire (on garde le fichier existant) -->
+    <img src="../home.webp" alt="Home" class="hero-image" fetchpriority="high" decoding="async" />
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <h1>BOEKHOUDKUNDIGE EXPERTISE, HERUITGEVONDEN MET EISEN</h1>
+      <div class="cta-center">
+        <a href="#contact" class="rect-cta">Neem contact met ons op</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section class="page-section contact-section" id="contact">
-  <h1 class="contact-title">UW AANVRAAG, ONZE PRIORITEIT</h1>
-  <p class="contact-subtext">Stel ons uw vraag, wij antwoorden zo spoedig mogelijk.</p>
-  <div class="contact-container">
-    <div id="form-wrapper">
-      <form action="https://formspree.io/f/mdkzrqly" class="contact-form" id="contactForm" method="POST">
-        <input type="text" name="name" placeholder="Voornaam & Naam *" required/>
-        <input type="email" name="email" placeholder="E-mail"/>
-        <input type="tel" name="phone" placeholder="Telefoonnummer"/>
-        <input type="text" name="subject" placeholder="Onderwerp *" required/>
-        <textarea name="message" rows="6" placeholder="Uw bericht *" required></textarea>
-        <p class="form-note">* Verplichte velden. Vul minstens e-mail of telefoonnummer in.</p>
-        <button type="submit">Verzenden</button>
-      </form>
-      <div class="envelope-animation" id="animationSuccess" style="display: none;">
-        <div class="envelope"></div>
-        <p class="success-text">Bedankt voor uw bericht.<br/>Wij nemen spoedig contact met u op.</p>
+  <!-- OVER ONS -->
+  <section class="about" id="about">
+    <div class="about-text">
+      <h2>OVER ACCOUNT-BEL<span class="belgian-flag-img title-flag"></span></h2>
+      <p><strong>Account-Bel<span class="belgian-flag-img"></span></strong> is een erkend boekhoudkantoor door het I.T.A.A., geregistreerd onder nummer 50.593.883 en opgericht in 2004 door <strong>Michaël SPANOUDIS</strong>.</p>
+      <p>Bij Account-Bel maken we geen loze beloften. Wij doen het werk serieus en nauwkeurig, met een aanpak gericht op luisteren en helderheid. Elke klant is een partner, elk dossier een verbintenis.</p>
+      <p>Ons team van experts met complementaire profielen beheert uw boekhouding met precisie, vertrouwelijkheid en efficiëntie.</p>
+      <p><strong>Onze missie:</strong> u helpen vooruitgaan met een gerust hart — heldere cijfers zorgen voor een heldere geest.</p>
+    </div>
+    <div class="about-photo-wrapper">
+      <img src="../admin.webp" alt="Michael Beheerder" loading="lazy" decoding="async" />
+      <div class="about-photo-overlay">Michael Beheerder</div>
+    </div>
+  </section>
+
+  <!-- DIENSTEN -->
+  <section class="services-section" id="services">
+    <h2 class="services-title">ONZE DIENSTEN</h2>
+    <div class="services-grid">
+      <div class="service-box"><img src="../comptabilite.webp" alt="" loading="lazy" decoding="async" /><h2>Algemene Boekhouding</h2><p>Volledige boekhouding, situatieanalyses en updates.</p></div>
+      <div class="service-box"><img src="../fiscalite.webp" alt="" loading="lazy" decoding="async" /><h2>Fiscale Aangiften</h2><p>Vennootschaps- en personenbelasting, btw-aangiften.</p></div>
+      <div class="service-box"><img src="../creation.webp" alt="" loading="lazy" decoding="async" /><h2>Oprichting van Ondernemingen</h2><p>Begeleiding van financieel plan tot notariële akte.</p></div>
+      <div class="service-box"><img src="../social.webp" alt="" loading="lazy" decoding="async" /><h2>Sociale Administratie</h2><p>Bevoorrechte toegang tot sociale partners.</p></div>
+      <div class="service-box"><img src="../conseil.webp" alt="" loading="lazy" decoding="async" /><h2>Beheeradvies</h2><p>Strategische begeleiding en dashboards.</p></div>
+      <div class="service-box"><img src="../bilan.webp" alt="" loading="lazy" decoding="async" /><h2>Voorbereiding van de Jaarrekening</h2><p>Tussentijdse of jaarlijkse balansen, interne audits.</p></div>
+      <div class="service-box"><img src="../juridique.webp" alt="" loading="lazy" decoding="async" /><h2>Juridische Bijstand</h2><p>Statuten, algemene vergaderingen en advies.</p></div>
+      <div class="service-box"><img src="../audit.webp" alt="" loading="lazy" decoding="async" /><h2>Premium Audit</h2><p>Grondige controle met gedetailleerd verslag.</p></div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="blog-section" id="blog">
+    <h2 class="blog-title">ONZE BLOG</h2>
+    <div class="blog-container">
+      <div class="blog-post">
+        <img src="../facturation.webp" alt="Elektronische facturatie" loading="lazy" decoding="async" />
+        <div class="blog-content">
+          <h2>Elektronische facturatie in België</h2>
+          <p class="blog-date">26 juni 2025</p>
+          <p> Vanaf 1 januari 2026 wordt elektronische facturatie verplicht in België. Bereid u tijdig voor en optimaliseer uw administratie.</p>
+          <p>Wij begeleiden u graag in dit proces.</p>
+          <p><a class="read-more" href="#contact">Contacteer ons voor hulp of vragen</a>.</p>
+        </div>
       </div>
     </div>
-    <div class="contact-image">
-      <img src="../contact.webp" alt="Professioneel kantoor"/>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- GALERIJ -->
-<section class="gallery-section" id="galerie">
-  <h2 class="gallery-title">GALERIJ</h2>
-  <div class="gallery-grid">
-    <div class="gallery-item"><img src="../galerie1.webp" alt="Foto 1" loading="lazy" /></div>
-    <div class="gallery-item"><img src="../galerie2.webp" alt="Foto 2" loading="lazy" /></div>
-    <div class="gallery-item"><img src="../galerie3.webp" alt="Foto 3" loading="lazy" /></div>
-    <div class="gallery-item"><img src="../galerie4.webp" alt="Foto 4" loading="lazy" /></div>
-  </div>
-</section>
+  <!-- CONTACT -->
+  <section class="page-section contact-section" id="contact">
+    <h1 class="contact-title">UW AANVRAAG, ONZE PRIORITEIT</h1>
+    <p class="contact-subtext">Stel ons uw vraag, wij antwoorden zo spoedig mogelijk.</p>
+    <div class="contact-container">
+      <div id="form-wrapper">
+        <form action="https://formspree.io/f/mdkzrqly" class="contact-form" id="contactForm" method="POST">
+          <input type="text" name="name" placeholder="Voornaam & Naam *" required/>
+          <input type="email" name="email" placeholder="E-mail"/>
+          <input type="tel" name="phone" placeholder="Telefoonnummer"/>
+          <input type="text" name="subject" placeholder="Onderwerp *" required/>
+          <textarea name="message" rows="6" placeholder="Uw bericht *" required></textarea>
+          <p class="form-note">* Verplichte velden. Vul minstens e-mail of telefoonnummer in.</p>
+          <button type="submit">Verzenden</button>
+        </form>
+        <div class="envelope-animation" id="animationSuccess" style="display: none;">
+          <div class="envelope"></div>
+          <p class="success-text">Bedankt voor uw bericht.<br/>Wij nemen spoedig contact met u op.</p>
+        </div>
+      </div>
+      <div class="contact-image">
+        <img src="../contact.webp" alt="Professioneel kantoor" loading="lazy" decoding="async"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIJ -->
+  <section class="gallery-section" id="galerie">
+    <h2 class="gallery-title">GALERIJ</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="../galerie1.webp" alt="Foto 1" loading="lazy" decoding="async" /></div>
+      <div class="gallery-item"><img src="../galerie2.webp" alt="Foto 2" loading="lazy" decoding="async" /></div>
+      <div class="gallery-item"><img src="../galerie3.webp" alt="Foto 3" loading="lazy" decoding="async" /></div>
+      <div class="gallery-item"><img src="../galerie4.webp" alt="Foto 4" loading="lazy" decoding="async" /></div>
+    </div>
+  </section>
 </main>
 
 <!-- FOOTER -->
@@ -178,38 +197,38 @@
     </div>
   </div>
 </footer>
+
 <script>
   const burger = document.getElementById('burger');
   const navLeft = document.querySelector('.nav-left');
+  burger.addEventListener('click', () => { navLeft.classList.toggle('show'); });
+</script>
 
-  burger.addEventListener('click', () => {
-    navLeft.classList.toggle('show');
+<script>
+  // Force le rechargement sans cache à chaque clic sur un lien interne
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
+        if (href && !href.startsWith("http") && !href.startsWith("#")) {
+          e.preventDefault();
+          const noCacheURL = href + (href.includes("?") ? "&" : "?") + "v=" + Date.now();
+          window.location.href = noCacheURL;
+        }
+      });
+    });
   });
 </script>
-  <script>
-// Force le rechargement sans cache à chaque clic sur un lien interne
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", function (e) {
-            const href = this.getAttribute("href");
-            if (href && !href.startsWith("http") && !href.startsWith("#")) {
-                e.preventDefault();
-                // Ajoute un paramètre unique pour éviter le cache
-                const noCacheURL = href + (href.includes("?") ? "&" : "?") + "v=" + Date.now();
-                window.location.href = noCacheURL;
-            }
-        });
-    });
-});
-</script>
- <!-- Event snippet for Envoi de formulaire pour prospects conversion page -->
+
+<!-- Event snippet for Envoi de formulaire pour prospects conversion page -->
 <script>
   gtag('event', 'conversion', {
-      'send_to': 'AW-17377754743/gK1PCOiF5IMbEPf8rd5A',
-      'value': 1.0,
-      'currency': 'EUR'
+    'send_to': 'AW-17377754743/gK1PCOiF5IMbEPf8rd5A',
+    'value': 1.0,
+    'currency': 'EUR'
   });
 </script>
-  <script src="nocache.js"></script>
+
+<script src="nocache.js"></script>
 </body>
 </html>
