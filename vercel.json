@@ -3,7 +3,8 @@
   "trailingSlash": true,
 
   "redirects": [
-    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/", "destination": "/fr/", "permanent": false },
+    { "source": "/index.html", "destination": "/fr/", "permanent": false },
 
     { "source": "/english/index.html", "destination": "/english/", "permanent": true },
     { "source": "/nederlands/index.html", "destination": "/nederlands/", "permanent": true },
