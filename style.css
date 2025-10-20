@@ -626,3 +626,75 @@ ul {
   background: #e9c979;
   color: #000;
 }
+/* ✅ Cross-device base to avoid text auto-zoom/boosting */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Reset tap highlight (Android/Samsung) + focus visible accessible */
+.lang-switch a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+}
+.lang-switch a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Masqué par défaut (desktop/tablette) */
+.lang-switch { display: none; }
+
+/* ✅ Mobile only */
+@media (max-width: 768px) {
+  .header .nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    /* Respecte les encoches et bords arrondis (iOS & Android) */
+    padding-inline-start: max(0px, env(safe-area-inset-left));
+  }
+
+  .lang-switch a {
+    /* Hit-area confortable même en très petit écran/zoom élevé */
+    min-width: 40px;
+    min-height: 40px;
+    padding: 8px 10px;
+    border: 1px solid currentColor;
+    border-radius: 9999px;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Taille fluide qui ne “pète” pas la ligne sur Samsung/Firefox */
+    font-size: clamp(12px, 3.2vw, 14px);
+    line-height: 1;
+    letter-spacing: .02em;
+
+    /* Lisibilité et contraste */
+    opacity: .9;
+    backdrop-filter: saturate(120%);
+  }
+
+  /* Langue active (ARIA) */
+  .lang-switch a[aria-current="true"] {
+    font-weight: 600;
+    opacity: 1;
+  }
+
+  /* Si le header est sticky, éviter que ça colle au bord */
+  .header.sticky .lang-switch { margin-left: 2px; }
+}
+
+/* Option : si ton header a un fond clair/sombre, tu peux ajuster ici
+.lang-switch a { background: rgba(255,255,255,.6); }
+@media (prefers-color-scheme: dark) {
+  .lang-switch a { background: rgba(0,0,0,.25); }
+}
+*/
