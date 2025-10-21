@@ -644,57 +644,71 @@ html {
 /* Masqué par défaut (desktop/tablette) */
 .lang-switch { display: none; }
 
-/* ✅ Mobile only */
+/* ── Dropdown langues (mobile) ─────────────────────────────── */
+.lang-dd { display: none; } /* caché par défaut (desktop) */
+
 @media (max-width: 768px) {
-  .header .nav {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .lang-switch {
+  /* On garde ta navbar; on place le dropdown à gauche */
+  .lang-dd{
+    position: absolute;
+    left: max(10px, env(safe-area-inset-left));
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10002;
     display: inline-flex;
-    gap: 8px;
-    align-items: center;
-    /* Respecte les encoches et bords arrondis (iOS & Android) */
-    padding-inline-start: max(0px, env(safe-area-inset-left));
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .lang-switch a {
-    /* Hit-area confortable même en très petit écran/zoom élevé */
-    min-width: 40px;
-    min-height: 40px;
-    padding: 8px 10px;
+  .lang-dd__btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 36px;
+    padding: 6px 10px;
     border: 1px solid currentColor;
     border-radius: 9999px;
-    text-decoration: none;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    background: transparent;
+    color: #e9c979;
+    font: 600 clamp(12px, 3.2vw, 14px) 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    -webkit-tap-highlight-color: rgba(0,0,0,.12);
+  }
+  .lang-dd__btn:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+  .lang-dd__chev{ transition: transform .2s ease; }
 
-    /* Taille fluide qui ne “pète” pas la ligne sur Samsung/Firefox */
-    font-size: clamp(12px, 3.2vw, 14px);
+  .lang-dd__menu{
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    display: none;
+    background: rgba(0,0,0,.85);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(233,201,121,.35);
+    border-radius: 10px;
+    padding: 6px;
+    min-width: 120px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  }
+  .lang-dd__menu a{
+    display: block;
+    padding: 10px 12px;
+    color: #e9c979;
+    font: 600 14px 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    border-radius: 8px;
     line-height: 1;
-    letter-spacing: .02em;
-
-    /* Lisibilité et contraste */
-    opacity: .9;
-    backdrop-filter: saturate(120%);
+  }
+  .lang-dd__menu a:hover,
+  .lang-dd__menu a[aria-current="true"]{
+    background: rgba(233,201,121,.15);
+    color: #fff;
   }
 
-  /* Langue active (ARIA) */
-  .lang-switch a[aria-current="true"] {
-    font-weight: 600;
-    opacity: 1;
-  }
+  /* état ouvert */
+  .lang-dd.is-open .lang-dd__menu{ display: block; }
+  .lang-dd.is-open .lang-dd__chev{ transform: rotate(180deg); }
 
-  /* Si le header est sticky, éviter que ça colle au bord */
-  .header.sticky .lang-switch { margin-left: 2px; }
+  /* On cache le switcher desktop en mobile pour éviter le doublon */
+  .lang-switch { display: none; }
 }
-
-/* Option : si ton header a un fond clair/sombre, tu peux ajuster ici
-.lang-switch a { background: rgba(255,255,255,.6); }
-@media (prefers-color-scheme: dark) {
-  .lang-switch a { background: rgba(0,0,0,.25); }
-}
-*/
