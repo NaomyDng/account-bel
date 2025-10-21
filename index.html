@@ -32,13 +32,13 @@
   <meta name="keywords" content="boekhouding, fiscaliteit, Brussel, Account-Bel, boekhoudkantoor, btw, jaarrekening" />
   <meta name="author" content="Account-Bel SRL" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://account-bel.be/nederlands/index.html" />
+  <link rel="canonical" href="https://account-bel.be/nederlands/">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Boekhoudkundige expertise in Brussel | Account-Bel" />
   <meta property="og:description" content="Boekhouding, fiscale aangiften en oprichting van ondernemingen in Brussel. Deskundige en vertrouwelijke begeleiding." />
   <meta property="og:image" content="https://account-bel.be/images/og-image.jpg" />
-  <meta property="og:url" content="https://account-bel.be/nederlands/index.html" />
+  <meta property="og:url" content="https://account-bel.be/nederlands/">
   <meta property="og:type" content="website" />
 
   <!-- Twitter -->
@@ -72,6 +72,13 @@
 <body>
 <!-- NAVBAR -->
 <nav class="navbar">
+   <!-- Switcher langues — MOBILE ONLY (à gauche) -->
+<div class="lang-switch-mobile" role="navigation" aria-label="Taalkeuze / Language">
+  <a href="/"            lang="fr" hreflang="fr" data-lang="fr">FR</a>
+  <a href="/english/"    lang="en" hreflang="en" data-lang="en">EN</a>
+  <a href="/nederlands/" lang="nl" hreflang="nl" data-lang="nl">NL</a>
+  <a href="/greek/"      lang="el" hreflang="el" data-lang="el">GR</a>
+</div>
   <ul class="nav-left">
     <li><a href="#about">OVER ONS</a></li>
     <li><a href="#services">DIENSTEN</a></li>
@@ -239,5 +246,18 @@
 </script>
 
 <script src="nocache.js"></script>
+  <script>
+(function () {
+  var p = (location.pathname || "").toLowerCase();
+  var current = "nl";
+  if (p.startsWith("/english/")) current = "en";
+  else if (p.startsWith("/nederlands/")) current = "nl";
+  else if (p.startsWith("/greek/") || p.startsWith("/el/")) current = "el";
+
+  document.querySelectorAll('.lang-switch-mobile a, .lang-switch a').forEach(function(a){
+    if (a.dataset.lang === current) a.setAttribute('aria-current','true');
+  });
+})();
+</script>
 </body>
 </html>
