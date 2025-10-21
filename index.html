@@ -72,20 +72,24 @@
 <body>
 <!-- NAVBAR -->
 <nav class="navbar">
- <!-- ✅ Langues (mobile) : bouton + menu déroulant, aligné à gauche -->
-<div class="lang-dd" data-current="fr">
-  <button class="lang-dd__btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Choisir la langue">
+<div class="lang-dd" id="langDD">
+  <button class="lang-dd__btn"
+          type="button"
+          aria-haspopup="listbox"
+          aria-expanded="false"
+          aria-controls="langList"
+          aria-label="Choisir la langue">
     <span class="lang-dd__label">FR</span>
     <svg class="lang-dd__chev" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
       <path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
     </svg>
   </button>
 
-  <ul class="lang-dd__menu" role="listbox">
-    <li><a href="/"            lang="fr" hreflang="fr" data-lang="fr" role="option">FR</a></li>
-    <li><a href="/english/"    lang="en" hreflang="en" data-lang="en" role="option">EN</a></li>
-    <li><a href="/nederlands/" lang="nl" hreflang="nl" data-lang="nl" role="option">NL</a></li>
-    <li><a href="/greek/"      lang="el" hreflang="el" data-lang="el" role="option">GR</a></li>
+  <ul class="lang-dd__menu" id="langList" role="listbox" aria-labelledby="langList">
+    <li><a href="/"            data-lang="fr" lang="fr" hreflang="fr" role="option">FR</a></li>
+    <li><a href="/english/"    data-lang="en" lang="en" hreflang="en" role="option">EN</a></li>
+    <li><a href="/nederlands/" data-lang="nl" lang="nl" hreflang="nl" role="option">NL</a></li>
+    <li><a href="/greek/"      data-lang="el" lang="el" hreflang="el" role="option">GR</a></li>
   </ul>
 </div>
   <ul class="nav-left">
@@ -257,35 +261,30 @@
 <script src="nocache.js"></script>
   <script>
 (function(){
-  // Détecte la langue depuis l'URL
+  var dd   = document.getElementById('langDD');
+  if (!dd) return;
+  var btn  = dd.querySelector('.lang-dd__btn');
+  var menu = dd.querySelector('.lang-dd__menu');
+  var lab  = dd.querySelector('.lang-dd__label');
+
+  // Détecte la langue courante via l'URL, et met à jour l’étiquette + aria-current
   var p = (location.pathname || "").toLowerCase();
   var current = "fr";
-  if (p.startsWith("/english/")) current = "en";
+  if (p.startsWith("/english/"))    current = "en";
   else if (p.startsWith("/nederlands/")) current = "nl";
   else if (p.startsWith("/greek/") || p.startsWith("/el/")) current = "el";
-
-  // Marque la langue active (desktop & mobile)
-  document.querySelectorAll('.lang-switch a, .lang-dd__menu a').forEach(function(a){
-    if (a.dataset.lang === current) a.setAttribute('aria-current','true');
+  dd.querySelectorAll('[data-lang]').forEach(function(a){
+    if (a.dataset.lang === current) a.setAttribute('aria-current', 'true');
   });
-
-  // Met l'étiquette du bouton (FR/EN/NL/GR)
-  var label = document.querySelector('.lang-dd__label');
-  if (label) label.textContent = current.toUpperCase();
-
-  // Toggle du menu
-  var dd = document.querySelector('.lang-dd');
-  var btn = document.querySelector('.lang-dd__btn');
-  var menu = document.querySelector('.lang-dd__menu');
-  if (!dd || !btn || !menu) return;
+  lab.textContent = current.toUpperCase();
 
   function closeMenu(){
     dd.classList.remove('is-open');
-    btn.setAttribute('aria-expanded','false');
+    btn.setAttribute('aria-expanded', 'false');
   }
   function openMenu(){
     dd.classList.add('is-open');
-    btn.setAttribute('aria-expanded','true');
+    btn.setAttribute('aria-expanded', 'true');
   }
 
   btn.addEventListener('click', function(e){
@@ -293,14 +292,20 @@
     dd.classList.contains('is-open') ? closeMenu() : openMenu();
   });
 
-  // Fermer en cliquant à l'extérieur
+  // Ferme en cliquant dehors
   document.addEventListener('click', function(e){
     if (!dd.contains(e.target)) closeMenu();
   });
 
-  // Fermer avec Echap
+  // Ferme avec Echap
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape') closeMenu();
+  });
+
+  // Ferme quand on clique un lien de langue (navigation)
+  menu.addEventListener('click', function(e){
+    var a = e.target.closest('a[href]');
+    if (a) closeMenu();
   });
 })();
 </script>
