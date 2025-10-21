@@ -641,14 +641,10 @@ html {
   outline-offset: 2px;
 }
 
-/* Masqué par défaut (desktop/tablette) */
-.lang-switch { display: none; }
-
-/* ── Dropdown langues (mobile) ─────────────────────────────── */
-.lang-dd { display: none; } /* caché par défaut (desktop) */
+/* ── Dropdown langues (mobile) ───────────────────────────── */
+.lang-dd { display: none; } /* caché par défaut (desktop/tablette) */
 
 @media (max-width: 768px) {
-  /* On garde ta navbar; on place le dropdown à gauche */
   .lang-dd{
     position: absolute;
     left: max(10px, env(safe-area-inset-left));
@@ -688,7 +684,10 @@ html {
     border-radius: 10px;
     padding: 6px;
     min-width: 120px;
+    max-height: 60vh;               /* scroll si très petit écran */
+    overflow: auto;
     box-shadow: 0 8px 24px rgba(0,0,0,.35);
+    -webkit-overflow-scrolling: touch;
   }
   .lang-dd__menu a{
     display: block;
@@ -705,10 +704,12 @@ html {
     color: #fff;
   }
 
-  /* état ouvert */
   .lang-dd.is-open .lang-dd__menu{ display: block; }
   .lang-dd.is-open .lang-dd__chev{ transform: rotate(180deg); }
 
-  /* On cache le switcher desktop en mobile pour éviter le doublon */
+  /* cache le switcher desktop en mobile (seulement ici) */
   .lang-switch { display: none; }
 }
+
+/* stabilité visuelle du label (FR/EN/NL/GR) */
+.lang-dd__label { display: inline-block; min-width: 2.2ch; text-align: center; }
