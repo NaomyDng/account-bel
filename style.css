@@ -1,26 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Roboto:wght@400&display=swap');
 
-/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ✍️ Texte courant → Roboto */
 p, span, li, label, input, textarea {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
 
-/* 🖋️ Titres → Cormorant */
 h1, h2, h3 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
   color: #e9c979;
 }
 
-/* 🍽️ Navbar */
 .navbar a {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
@@ -43,7 +39,6 @@ ul {
   list-style: none;
 }
 
-/* --- NAVBAR --- */
 .navbar {
   position: fixed;
   top: 0;
@@ -101,7 +96,6 @@ ul {
   margin-left: 8px;
 }
 
-/* --- BURGER MENU --- */
 .burger-menu {
   display: none;
   font-size: 30px;
@@ -113,10 +107,9 @@ ul {
   z-index: 10001;
 }
 
-/* --- HERO --- */
 .hero {
   position: relative;
-  height: 100vh; /* ✅ Fix pour forcer l'affichage sur desktop */
+  height: 100vh; 
   overflow: hidden;
   margin-top: -70px;
   padding-top: 70px;
@@ -175,7 +168,6 @@ ul {
   color: #000;
 }
 
-/* --- À PROPOS --- */
 .about {
   display: flex;
   justify-content: space-between;
@@ -237,7 +229,6 @@ ul {
   opacity: 1;
 }
 
-/* --- SERVICES --- */
 .services-section {
   padding: 120px 40px 80px;
   background-color: #000;
@@ -297,7 +288,6 @@ ul {
   line-height: 1.5;
 }
 
-/* --- BLOG --- */
 .blog-section {
   padding: 120px 40px;
   background-color: #111;
@@ -369,7 +359,6 @@ ul {
   color: #fff;
 }
 
-/* --- CONTACT --- */
 .contact-section {
   padding: 120px 40px;
   background-color: #000;
@@ -450,7 +439,6 @@ ul {
   color: #000;
 }
 
-/* --- FOOTER --- */
 .footer {
   background-color: #111;
   color: #777;
@@ -486,7 +474,6 @@ ul {
   text-decoration: underline;
 }
 
-/* --- COOKIES --- */
 .cookie-banner {
   position: fixed;
   bottom: 0;
@@ -519,7 +506,6 @@ ul {
   color: #111;
 }
 
-/* --- GALERIE --- */
 .gallery-section {
   background-color: #111;
   padding: 80px 20px;
@@ -561,7 +547,6 @@ ul {
   display: block;
 }
 
-/* ✅ Fix mobile */
 @media (max-width: 1024px) {
   .navbar {
     height: 50px;
@@ -577,11 +562,10 @@ ul {
 
   .hero, .about, .services-section, .blog-section, .gallery-section, .contact-section { padding: 30px 15px; }
 
-  /* 🔧 Fix visibilité du hero en mobile */
   .hero {
-    margin-top: -50px;    /* au lieu de -70px desktop */
-    padding-top: 50px;    /* compense la navbar mobile */
-    min-height: 70vh;     /* évite l’écrasement du hero */
+    margin-top: -50px;    
+    padding-top: 50px;    
+    min-height: 70vh;     
   }
 
   .hero-text h1 { font-size: 1.4em; line-height: 1.4em; }
@@ -592,11 +576,9 @@ ul {
   .contact-form { flex: 1 1 100%; width: 100%; }
   .contact-container { flex-direction: column; gap: 20px; }
 
-  /* 🌐 Langues insérées dans le menu gauche (mobile) */
   .lang-inline { display: block; font-size: 14px; }
   .lang-inline a { color: #e9c979; text-transform: uppercase; }
 }
-/* --- Bouton rectangulaire Contactez-nous --- */
 .cta-center {
   display: flex;
   justify-content: center;
@@ -608,9 +590,9 @@ ul {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 40px;          /* espace interne */
-  border: 2px solid #e9c979;   /* doré Account-Bel */
-  border-radius: 8px;          /* coins arrondis */
+  padding: 14px 40px;         
+  border: 2px solid #e9c979;   
+  border-radius: 8px;          
   background: transparent;
   color: #e9c979;
   font-weight: 600;
@@ -626,13 +608,12 @@ ul {
   background: #e9c979;
   color: #000;
 }
-/* ✅ Cross-device base to avoid text auto-zoom/boosting */
+
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
 
-/* Reset tap highlight (Android/Samsung) + focus visible accessible */
 .lang-switch a {
   -webkit-tap-highlight-color: rgba(0,0,0,0.1);
 }
@@ -641,8 +622,7 @@ html {
   outline-offset: 2px;
 }
 
-/* ── Dropdown langues (mobile) ───────────────────────────── */
-.lang-dd { display: none; } /* caché par défaut (desktop/tablette) */
+.lang-dd { display: none; } 
 
 @media (max-width: 768px) {
   .lang-dd{
@@ -684,7 +664,7 @@ html {
     border-radius: 10px;
     padding: 6px;
     min-width: 120px;
-    max-height: 60vh;               /* scroll si très petit écran */
+    max-height: 60vh;          
     overflow: auto;
     box-shadow: 0 8px 24px rgba(0,0,0,.35);
     -webkit-overflow-scrolling: touch;
@@ -707,40 +687,32 @@ html {
   .lang-dd.is-open .lang-dd__menu{ display: block; }
   .lang-dd.is-open .lang-dd__chev{ transform: rotate(180deg); }
 
-  /* cache le switcher desktop en mobile (seulement ici) */
   .lang-switch { display: none; }
 }
 
-/* stabilité visuelle du label (FR/EN/NL/GR) */
 .lang-dd__label { display: inline-block; min-width: 2.2ch; text-align: center; }
-/* === Dropdown langues (MOBILE ONLY) — n'altère pas le desktop === */
 
-/* Par défaut (desktop/tablette) : on cache le dropdown mobile */
 .lang-dd{ display:none; }
 
-/* Styles communs */
 .lang-dd__label{ display:inline-block; min-width:2.2ch; text-align:center; }
 .lang-dd__chev{ transition: transform .2s ease; }
 
-/* État ouvert */
 .lang-dd.is-open .lang-dd__menu{ display:block; }
 .lang-dd.is-open .lang-dd__chev{ transform: rotate(180deg); }
 
 @media (max-width: 768px) {
-  /* Affiche le dropdown et place-le à GAUCHE dans la navbar */
   .lang-dd{
-    display:inline-flex !important;          /* force l’affichage même si d’autres règles existent */
+    display:inline-flex !important;         
     position:absolute;
     left: max(10px, env(safe-area-inset-left));
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10002;                           /* au-dessus de la navbar & du burger */
+    z-index: 10002;                          
     flex-direction:column;
     align-items:stretch;
     pointer-events:auto;
   }
 
-  /* Bouton FR/EN/NL/GR */
   .lang-dd__btn{
     display:inline-flex;
     align-items:center;
@@ -757,23 +729,22 @@ html {
   }
   .lang-dd__btn:focus-visible{ outline:2px solid currentColor; outline-offset:2px; }
 
-  /* Menu déroulant */
   .lang-dd__menu{
     position:absolute;
     top: calc(100% + 6px);
     left:0;
-    display:none;                             /* affiché via .is-open ci-dessus */
+    display:none;                             
     background: rgba(0,0,0,.85);
     backdrop-filter: blur(6px);
     border:1px solid rgba(233,201,121,.35);
     border-radius:10px;
     padding:6px;
     min-width:120px;
-    max-height:60vh;                          /* scroll si écran petit */
+    max-height:60vh;                         
     overflow:auto;
     box-shadow:0 8px 24px rgba(0,0,0,.35);
     -webkit-overflow-scrolling:touch;
-    z-index:10003;                            /* au-dessus du bouton */
+    z-index:10003;                            
   }
   .lang-dd__menu a{
     display:block;
@@ -791,34 +762,31 @@ html {
     color:#fff;
   }
 
-  /* En mobile on masque le switcher desktop à droite pour éviter le doublon */
   .lang-switch{ display:none !important; }
 }
-/* ───────────────── Langues : visibles, petites, à gauche, tous écrans ───────────────── */
 .navbar .lang-switch{
   position: absolute;
   left: max(10px, env(safe-area-inset-left));
   right: auto;
   top: 50%;
   transform: translateY(-50%);
-  display: flex !important;         /* force visible même si caché ailleurs */
+  display: flex !important;         
   align-items: center;
   z-index: 10002;
-  gap: 0;                            /* on gère l’espacement sur <a> */
-  font-size: 0;                      /* masque les caractères " | " entre les liens */
+  gap: 0;                         
+  font-size: 0;                     
   pointer-events: auto;
 }
 
-/* Liens de langue (taille réduite) */
 .navbar .lang-switch a{
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 13px;                   /* plus petit que la nav */
+  font-size: 13px;
   line-height: 1;
   color: #e9c979;
   opacity: .95;
-  padding: 6px 8px;                  /* surface cliquable correcte */
+  padding: 6px 8px;
   border-radius: 6px;
   text-decoration: none;
   display: inline-flex;
@@ -826,28 +794,22 @@ html {
   justify-content: center;
 }
 
-/* Espacement entre liens (sans afficher les “ | ”) */
 .navbar .lang-switch a + a { margin-left: 6px; }
 
-/* Hover + langue active */
 .navbar .lang-switch a:hover{ color:#fff; }
 .navbar .lang-switch a[aria-current="true"]{
   background: rgba(233,201,121,.15);
   color:#fff;
 }
 
-/* Évite le chevauchement avec le menu gauche sur desktop */
 @media (min-width: 1025px){
-  .nav-left{ left: clamp(140px, 12vw, 220px); }  /* ajuste si besoin */
+  .nav-left{ left: clamp(140px, 12vw, 220px); }
 }
 
-/* Tablette & mobile : lisible et stable */
 @media (max-width: 1024px){
   .navbar{ justify-content: center; }
   .navbar .lang-switch a{ font-size: 12px; padding: 6px 7px; }
-  /* ton CSS cache déjà .nav-left en mobile, on laisse ainsi */
 }
 
-/* Si un dropdown mobile .lang-dd existe encore dans l’HTML, on le neutralise */
 .lang-dd{ display: none !important; }
 
