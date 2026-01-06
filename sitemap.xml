@@ -4,7 +4,6 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- 🇫🇷 FR -->
   <url>
     <loc>https://www.account-bel.be/</loc>
   </url>
@@ -12,7 +11,6 @@
     <loc>https://www.account-bel.be/mentions.html</loc>
   </url>
 
-  <!-- 🇬🇧 EN -->
   <url>
     <loc>https://www.account-bel.be/english/</loc>
   </url>
@@ -20,7 +18,6 @@
     <loc>https://www.account-bel.be/english/mentions.html</loc>
   </url>
 
-  <!-- 🇳🇱 NL -->
   <url>
     <loc>https://www.account-bel.be/nederlands/</loc>
   </url>
@@ -28,7 +25,6 @@
     <loc>https://www.account-bel.be/nederlands/mentions.html</loc>
   </url>
 
-  <!-- 🇬🇷 GR -->
   <url>
     <loc>https://www.account-bel.be/greek/</loc>
   </url>
